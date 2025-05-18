@@ -6,13 +6,14 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import session from "express-session";
 import db from "./db.js";
-import notificationsRouter from "./Controllers/notifications.js";
+import notificationsRouter  from "./Controllers/notifications.js";
 import { getCurrentLands } from "./Controllers/farmerLands.js";
 
 import {
   getRequests,
   acceptRequest,
   rejectRequest,
+  getActiveRentals,
   rentRequest
 } from "./Controllers/rentalRequests.js";
 
@@ -25,7 +26,6 @@ import {
   deleteOffer,
   getAllOffers,
 } from "./Controllers/offer.js";
-import { getNotifications } from "./Controllers/notification.js";
 import {
   getChatData,
   getChatContent,
@@ -42,6 +42,7 @@ import {
 import { signUp } from "./Controllers/signUP2.js";
 import { account, accountDeleteImage, accountUploadImage, getUser, updateAccount } from "./Controllers/account.js";
 import { sendMessage } from "./Controllers/contact.js";
+import { getProfile, getProfileStats, getRentedOffers, getUserOffers } from "./Controllers/profile.js";
 
 // Load environment variables
 env.config();
@@ -135,8 +136,6 @@ app.put("/updateOffer/:offerID", upload.array("images", 10), updateOffer);
 app.delete("/deleteOffer/:offerID", deleteOffer);
 app.get("/offers", getAllOffers);
 
-// Notifications
-app.get("/api/notifications", getNotifications);
 
 // Chat (HTTP)
 app.get("/getChatData", getChatData);
@@ -152,6 +151,8 @@ app.get("/sessionInfo", (req, res) => {
 
 // Dashboard "my offers"
 app.get("/dashboard/offers", getMyOffers);
+app.delete("/deleteOffer/:offerID", deleteOffer);
+
 
 // Add this middleware to check session
 app.get("/api/check-session", (req, res) => {
@@ -166,6 +167,10 @@ app.post('/rentRequest', rentRequest);
 app.get("/dashboard/requests", getRequests);
 app.post("/dashboard/requests/:id/accept", acceptRequest);
 app.post("/dashboard/requests/:id/reject", rejectRequest);
+app.get("/dashboard/active-rentals", getActiveRentals);
+
+
+
 
 app.get(
   "/farmer/current-lands",
@@ -178,6 +183,12 @@ app.get(
 
 // Contact form endpoint
 app.post("/api/contact/send-message", sendMessage);
+
+// Profile endpoints
+app.get("/getProfile/:userID", getProfile);
+app.get("/profileStats/:userID", getProfileStats);
+app.get("/rentedOffers/:userID", getRentedOffers);
+app.get("/getUserOffers/:userID",getUserOffers)
 
 // Start server
 server.listen(port, () => {

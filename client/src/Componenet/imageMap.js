@@ -1,0 +1,23 @@
+export const seasonalImageMap = {
+  Cauliflower: 'https://images.pexels.com/photos/6631961/pexels-photo-6631961.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+  Carrots: 'https://images.pexels.com/photos/1268101/pexels-photo-1268101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  Tomatoes:'../content images/tomatoes-growing-garden.jpg',
+  Pepper: 'https://cdn.pixabay.com/photo/2015/10/01/00/22/paprika-966289_960_720.jpg',
+  Cucumber: 'https://img.freepik.com/free-photo/top-view-chopped-cucumbers-with-mint_141793-18314.jpg?uid=R200665432&ga=GA1.1.269173016.1747485703&semt=ais_hybrid&w=740',
+  Eggplants: 'https://images.unsplash.com/photo-1722677757974-128ff2474b8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  Blueberry: 'https://cdn.pixabay.com/photo/2020/07/18/13/01/blueberry-5417154_960_720.jpg',
+  'Beans and Peas': 'https://cdn.pixabay.com/photo/2019/01/28/04/07/vegetable-3959593_960_720.jpg',
+  Onions: 'https://cdn.pixabay.com/photo/2018/07/15/20/43/onion-3540502_960_720.jpg',
+  Okra: 'https://cdn.pixabay.com/photo/2022/08/01/04/40/okra-7357328_1280.jpg',
+  Potato: '../content images/top-view-garden-tool-with-potatoes-garlic.jpg',
+  Apricots: 'https://cdn.pixabay.com/photo/2015/06/28/15/53/peaches-824627_1280.jpg',
+  Plums: 'https://cdn.pixabay.com/photo/2017/09/07/08/17/plums-2724160_1280.jpg',
+  Beans: 'https://cdn.pixabay.com/photo/2018/03/19/12/03/bean-3239830_1280.jpg',
+  Apples: 'https://cdn.pixabay.com/photo/2017/11/06/18/39/apple-2924531_1280.jpg',
+  Cucumbers: 'https://img.freepik.com/free-photo/top-view-chopped-cucumbers-with-mint_141793-18314.jpg?uid=R200665432&ga=GA1.1.269173016.1747485703&semt=ais_hybrid&w=740',
+  Guava: 'https://cdn.pixabay.com/photo/2021/12/16/03/16/guava-6873684_1280.jpg',
+  Figs: 'https://cdn.pixabay.com/photo/2022/05/31/22/42/barbary-fig-7234411_1280.jpg',
+  Grapes: 'https://cdn.pixabay.com/photo/2016/10/17/09/25/vines-1747224_960_720.jpg',
+  Pomegranates: 'https://cdn.pixabay.com/photo/2021/11/11/16/05/fruits-6786607_1280.jpg',
+  Citrus: 'https://cdn.pixabay.com/photo/2014/06/21/22/07/lime-374216_960_720.jpg'
+};

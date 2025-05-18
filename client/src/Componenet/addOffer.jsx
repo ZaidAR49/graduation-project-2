@@ -1,4 +1,3 @@
-// src/components/AddOffer.jsx
 import "../style/addOffer.css";
 import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
@@ -76,7 +75,7 @@ export default function AddOffer() {
       if (error.response && error.response.status === 401) {
         console.log("Not authenticated! Redirecting to login...");
         window.location.href = '/login';
-        return; // Stop here
+        return; 
       }
       console.error("Error saving offer:", error);
       notifications.show('Error saving offer. Please try again.', { severity: 'error' });
@@ -88,21 +87,21 @@ export default function AddOffer() {
       <div className="add_offer">
         <h3>Land Lease Information</h3>
         <form onSubmit={addOfferSubmit}>
-          {/* NO more hidden landOwnerID input! */}
           <div className="group-input">
-          
+          <label>Offer title</label>
             <input type="text" placeholder="Enter offer title" name="offer_title" minLength="5" maxLength="100" error="hi"/>
+            <label>Number of dunums</label>
             <UnitInput type="number" unit="m²" message="Enter the number of dunums" name="size" />
-
+            <label>Lease duration</label>
             <div className="detailed-input">
               <Input type="number" message="Lease duration (years)" name="years" min="0" max="10" />
               <Input type="number" message="Lease duration (months)" name="months" min="0" max="11" />
             </div>
-
+            <label>Price</label>
             <UnitInput type="number" unit="JOD" message="Enter price" name="price" min="1" max="100000000" />
+            <label>Location</label>
             <input type="text" placeholder="Enter location" name="location"  minLength="2" maxLength="100" />
-           
-        
+            <label>Description</label>
             <textarea
               className="textInput"
               name="description"
